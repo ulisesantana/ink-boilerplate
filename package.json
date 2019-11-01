@@ -1,0 +1,68 @@
+{
+	"name": "greeter",
+	"version": "0.0.0",
+	"license": "MIT",
+	"bin": {
+		"hi": "lib/cli.js"
+	},
+	"engines": {
+		"node": ">=8"
+	},
+	"scripts": {
+		"build": "rm -rf lib && babel src/ -d lib/ --extensions '.js' --ignore '*test*','*mock*'",
+		"prepare": "npm run build",
+		"lint": "xo",
+		"lint:fix": "npm run lint --fix",
+		"pretest": "npm run lint",
+		"test": "ava",
+		"test:tdd": "npm t --watch"
+	},
+	"files": [
+		"lib"
+	],
+	"dependencies": {
+		"ink": "^2.5.0",
+		"meow": "^5.0.0",
+		"prop-types": "^15.7.2",
+		"react": "^16.11.0"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.5.5",
+		"@babel/core": "^7.5.5",
+		"@babel/preset-react": "^7.6.3",
+		"@babel/register": "^7.6.2",
+		"@babel/preset-env": "^7.5.5",
+		"ava": "^2.4.0",
+		"chalk": "^2.4.2",
+		"eslint-config-xo-react": "^0.20.0",
+		"eslint-plugin-react": "^7.16.0",
+		"eslint-plugin-react-hooks": "^2.2.0",
+		"ink-testing-library": "^1.0.2",
+		"xo": "^0.25.3"
+	},
+	"ava": {
+		"files": [
+			"src/**/*test.js"
+		],
+		"require": [
+			"@babel/register"
+		]
+	},
+	"babel": {
+		"presets": [
+			"@babel/preset-react",
+			[
+				"@babel/preset-env",
+				{
+					"targets": {
+						"node": true
+					}
+				}
+			]
+		]
+	},
+	"xo": {
+		"extends": "xo-react",
+		"ignore": "./lib"
+	}
+}
