@@ -29,14 +29,15 @@
 	"devDependencies": {
 		"@babel/cli": "^7.5.5",
 		"@babel/core": "^7.5.5",
+		"@babel/preset-env": "^7.5.5",
 		"@babel/preset-react": "^7.6.3",
 		"@babel/register": "^7.6.2",
-		"@babel/preset-env": "^7.5.5",
 		"ava": "^2.4.0",
 		"chalk": "^2.4.2",
 		"eslint-config-xo-react": "^0.20.0",
 		"eslint-plugin-react": "^7.16.0",
 		"eslint-plugin-react-hooks": "^2.2.0",
+		"husky": "^3.0.9",
 		"ink-testing-library": "^1.0.2",
 		"xo": "^0.25.3"
 	},
@@ -64,5 +65,8 @@
 	"xo": {
 		"extends": "xo-react",
 		"ignore": "./lib"
+	},
+	"husky": {
+		"pre-push": "npm test"
 	}
 }
