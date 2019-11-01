@@ -15,7 +15,8 @@
 		"lint:fix": "npm run lint --fix",
 		"pretest": "npm run lint",
 		"test": "ava",
-		"test:tdd": "npm t --watch"
+		"test:tdd": "npm t --watch",
+		"test:coverage": "nyc ava"
 	},
 	"files": [
 		"lib"
@@ -39,6 +40,7 @@
 		"eslint-plugin-react-hooks": "^2.2.0",
 		"husky": "^3.0.9",
 		"ink-testing-library": "^1.0.2",
+		"nyc": "^14.1.1",
 		"xo": "^0.25.3"
 	},
 	"ava": {
